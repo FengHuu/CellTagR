@@ -11,7 +11,7 @@
 #' 
 SingleCellDataBinarization <- function(celltag.obj, tag.cutoff, replace.option = FALSE) {
   obj.collapsed.count <- GetCellTagCurrentVersionWorkingMatrix(celltag.obj, "collapsed.count")
-  if (sum(dim(obj.collapsed.count)) <= 0) {
+  if is.na((sum(dim(obj.collapsed.count))) | (sum(dim(obj.collapsed.count)) <= 0)  {
     CellTags <- GetCellTagCurrentVersionWorkingMatrix(celltag.obj, "raw.count")
   } else {
     CellTags <- obj.collapsed.count
